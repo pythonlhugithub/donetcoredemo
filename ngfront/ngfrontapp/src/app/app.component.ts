@@ -25,9 +25,10 @@ export class AppComponent {
  gethttppza():void{
 
  this.memberserv.GetAllPizza().subscribe(rsp=>console.log(rsp));
-
-
  
  }
-
 }
+
+
+
+//pythonlhugithub/aspnetrestapi    ---backend web api for ngfront end
