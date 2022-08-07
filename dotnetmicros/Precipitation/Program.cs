@@ -1,3 +1,7 @@
+using DOTNETMicros.Precipitation.DataAccess;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -22,9 +26,17 @@ var app = builder.Build();
 
 // app.MapControllers();
 
-app.MapGet("/observation/{zip}", (string zip)=>{
+app.MapGet("/observation/{zip}", async(string zip, [FromQuery] int? days, PreciDbContext pre)=>{
 
-    return Results.Ok(zip);
-}); //dotnet listen on
+
+if(days==null||days<1||days>30){
+    return Results.BadRequest("please provide days between 1 to 30"); //"" not entire db info
+}
+var startDate=DateTime.UtcNow-TimeSpan.FromDays(days.Value);
+var results=await pre.precipitation.Where(p=>p.ZipCOde==zip&&p.CreatedOn>startDate).ToListAsync();
+     return Results.Ok(results);
+}
+
+); //dotnet listen on observation/service
 
 app.Run();
