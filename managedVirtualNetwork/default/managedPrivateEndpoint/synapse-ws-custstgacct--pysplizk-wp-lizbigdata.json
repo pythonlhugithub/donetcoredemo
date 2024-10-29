@@ -1,0 +1,10 @@
+{
+	"name": "synapse-ws-custstgacct--pysplizk-wp-lizbigdata",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/d8c11825-c865-485c-a10c-0303f8558764/resourceGroups/rg-lizsynapse/providers/Microsoft.Storage/storageAccounts/lizbigdata",
+		"groupId": "dfs",
+		"fqdns": [
+			"lizbigdata.dfs.core.windows.net"
+		]
+	}
+}

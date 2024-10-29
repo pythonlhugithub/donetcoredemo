@@ -1,0 +1,10 @@
+{
+	"name": "synapse-ws-sqlOnDemand--pysplizk-wp",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/d8c11825-c865-485c-a10c-0303f8558764/resourceGroups/rg-lizsynapse/providers/Microsoft.Synapse/workspaces/pysplizk-wp",
+		"groupId": "sqlOnDemand",
+		"fqdns": [
+			"pysplizk-wp-ondemand.82a6b215-ed2a-4f89-9be6-9db79a3c72d7.sql.azuresynapse.net"
+		]
+	}
+}
